@@ -44,9 +44,33 @@
  * - 1 <= n <= 8
  */
 
-function rockPaperScissors() {
-  
+/**
+ * Generate all possible sequences of moves for a game of Rock-Paper-Scissors with n rounds.
+ *
+ * @param {number} n - The number of rounds.
+ * @return {string[]} An array of strings representing all possible sequences of moves.
+ */
+function rockPaperScissors(n) {
+  const moves = ["R", "P", "S"];
+  const sequences = [];
+
+  // Generate all possible sequences using nested loops
+  function generateSequences(round, sequence) {
+    if (round === n) {
+      sequences.push(sequence);
+      return;
+    }
+
+    for (let i = 0; i < moves.length; i++) {
+      generateSequences(round + 1, sequence + moves[i]);
+    }
+  }
+
+  generateSequences(0, "");
+  return sequences;
 }
+
+module.exports = rockPaperScissors;
 
 ////////////////////////////////////////////////////// TESTS ///////////////////////////////////////////////////////////////
 
@@ -112,5 +136,5 @@ function testRockPaperScissorsExtraCredit() {
 }
 
 // Run the test cases
-testRockPaperScissors();
-// testRockPaperScissorsExtraCredit();
+// testRockPaperScissors();
+testRockPaperScissorsExtraCredit();
