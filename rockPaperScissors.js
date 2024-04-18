@@ -44,9 +44,29 @@
  * - 1 <= n <= 8
  */
 
+/**
+ * Generate all possible sequences of moves for a game of Rock-Paper-Scissors with 3 rounds.
+ *
+ * @return {string[]} An array of strings representing all possible sequences of moves.
+ */
 function rockPaperScissors() {
-  
+    const moves = ['R', 'P', 'S'];
+    const sequences = [];
+
+    // Generate all possible sequences using nested loops
+    for (let i = 0; i < moves.length; i++) {
+        for (let j = 0; j < moves.length; j++) {
+            for (let k = 0; k < moves.length; k++) {
+                const sequence = moves[i] + moves[j] + moves[k];
+                sequences.push(sequence);
+            }
+        }
+    }
+
+    return sequences;
 }
+
+module.exports = rockPaperScissors;
 
 ////////////////////////////////////////////////////// TESTS ///////////////////////////////////////////////////////////////
 
