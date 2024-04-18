@@ -44,10 +44,9 @@
  * - 1 <= n <= 8
  */
 
-const rockPaperScissors = function (n) {
-  // TODO: your solution here
-  return [];
-};
+function rockPaperScissors() {
+  
+}
 
 ////////////////////////////////////////////////////// TESTS ///////////////////////////////////////////////////////////////
 
@@ -114,4 +113,4 @@ function testRockPaperScissorsExtraCredit() {
 
 // Run the test cases
 testRockPaperScissors();
-testRockPaperScissorsExtraCredit();
+// testRockPaperScissorsExtraCredit();
